@@ -1,0 +1,27 @@
+@startuml
+'https://plantuml.com/object-diagram
+
+title Part 3 ater three ships are created
+object "<u>ships:Ship[]</u>" as ships{
+length = 3
+}
+object "<u>Ocean Explorer:Ship</u>" as s {
+name = "Ocean Explorer"
+yearBuilt = "2015"
+}
+object "<u>Carribean Dream:CruiseShip</u>" as cs {
+name = "Carribean Dream"
+yearBuilt = "2020"
+maxPassengers = 3500
+}
+object "<u>Pacific Transporter:CargoShip</u>" as cargo {
+name = "Pacific Transporter"
+yearBuilt = "2018"
+CargoCapacityTons = 50000
+}
+
+ships --> s : [0]
+ships --> cs : [1]
+ships --> cargo : [2]
+
+@enduml
