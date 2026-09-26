@@ -2,4 +2,41 @@
 'https://plantuml.com/object-diagram
 
 title Folder Object Diagram after deleting App
+
+object "<u>phpDemo1:Folder</u>" as root {
+name = "php_demo1"
+}
+object "<u>sourceFiles:Folder</u>" as source {
+name = "Source Files"
+}
+object "<u>Inlude Path:Folder</u>" as path {
+name = "Inlude Path"
+}
+object "<u>Remote Files:Folder</u>" as remote {
+name = "Remote Files"
+}
+object "<u>publicFolder:Folder</u>" as public {
+name = "public"
+}
+object "<u>htaccess:File</u>" as htaccess {
+name = ".htaccess"
+}
+object "<u>router:File</u>" as router {
+name = ".htrouter.php"
+}
+object "<u>indexPage:File</u>" as index {
+name = "index.html"
+}
+
+root *-- source
+source *-- path
+source *-- remote
+source *-- public
+public *-- htaccess
+public *-- router
+public *-- index
+
+
+
+
 @enduml
