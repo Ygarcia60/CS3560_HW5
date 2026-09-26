@@ -1,0 +1,36 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+title Part 4 Course Aggregation
+class Course {
+ - courseName: String
+ + getCourseName(): String
+ + setCourseName(name: String): void
+ + print(): void
+}
+class Instructor {
+ - firstName: String
+ - lastName: String
+ - officeNumber: String
+ + getFirstName(): String
+ + setFirstName(name: String): void
+ + getLastName(): String
+ + setLastName(name: String): void
+ + getOfficeNumber(): String
+ + setOfficeNumber(number: String): void
+}
+class Textbook {
+ - title: String
+ - author: String
+ - publisher: String
+ + getTitle(): String
+ + setTitle(title: String): void
+ + getAuthor(): String
+ + setAuthor(author: String): void
+ + getPublisher(): String
+ + setPublisher(publisher: String): void
+}
+Course "0..*" o-- "1..2" Instructor : instructors
+Course "0..*" o-- "1..2" Textbook : textbooks
+
+@enduml
